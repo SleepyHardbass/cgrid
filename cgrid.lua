@@ -71,13 +71,13 @@ return {
     end,
 
     getPosition = function(self)
-        local x = AND(d, 0x55555555)
+        local x = AND(self.distance, 0x55555555)
         x = AND(OR(x, SHR(x, 1)), 0x33333333)
         x = AND(OR(x, SHR(x, 2)), 0x0F0F0F0F)
         x = AND(OR(x, SHR(x, 4)), 0x00FF00FF)
         x = AND(OR(x, SHR(x, 8)), 0x0000FFFF)
         
-        local y = AND(SHR(d, 1), 0x55555555)
+        local y = AND(SHR(self.distance, 1), 0x55555555)
         y = AND(OR(y, SHR(y, 1)), 0x33333333)
         y = AND(OR(y, SHR(y, 2)), 0x0F0F0F0F)
         y = AND(OR(y, SHR(y, 4)), 0x00FF00FF)
